@@ -1,0 +1,19 @@
+{
+    "name": "arturas/bank",
+    "description": "Bank v2",
+    "autoload": {
+        "psr-4": {
+            "Bank\\": "app/",
+			"Bank\\Controllers\\" : "app/controllers/",
+            "App\\DB\\": "app/"
+			
+        }
+    },
+    "authors": [
+        {
+            "name": "Arturas0",
+            "email": "arturas.bnr@gmail.com"
+        }
+    ],
+    "require": {}
+}

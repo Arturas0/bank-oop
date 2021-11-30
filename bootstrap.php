@@ -9,6 +9,6 @@ function getSetting(string $option)
     return $settings[$option] ?? null;
 }
 
-define('URL',  'http://' . $_SERVER["SERVER_NAME"] . '/db_laravel/bank/public/');
+define('URL',  'http://' . $_SERVER["SERVER_NAME"] . '/public/');
 define('DIR', __DIR__ . '/');
-define('INSTALL_DIR', '/db_laravel/bank/public/');
+define('INSTALL_DIR', '/public/');

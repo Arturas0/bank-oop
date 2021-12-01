@@ -129,6 +129,7 @@ class App
             PDO::ATTR_EMULATE_PREPARES   => false,
         ];
         echo 'Labas 2.5';
+        die();
         self::$pdo = new PDO($dsn, $user, $pass, $options);
     }
 

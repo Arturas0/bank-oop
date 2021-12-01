@@ -27,6 +27,7 @@ class App
         $userUri = explode('/', $userUri);
 
         echo 'Labas 3';
+        die();
 
         if (
             $_SERVER['REQUEST_METHOD'] == 'GET' &&

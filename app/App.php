@@ -120,6 +120,8 @@ class App
         $pass = getSetting('pass');
         $charset = 'utf8mb4';
 
+        echo 'Labas 2.5';
+
         $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
         $options = [
             PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,

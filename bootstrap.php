@@ -13,6 +13,6 @@ function getSetting(string $option)
 // define('DIR', __DIR__ . '/');
 // define('INSTALL_DIR', '/public/');
 
-define('URL',  'http://' . $_SERVER['SERVER_NAME'] . '/public/');
+define('URL', getSetting('url'));
 define('DIR', __DIR__ . '/');
-define('INSTALL_DIR', '/public/');
+define('INSTALL_DIR', getSetting('dir'));

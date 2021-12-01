@@ -23,12 +23,13 @@ class App
 
 
         $userUri = str_replace(INSTALL_DIR, '', $_SERVER['REQUEST_URI']);
-        echo $userUri . ' . 1 <br>';
+
         $userUri = preg_replace('/\?.*/', '', $userUri);
-        echo $userUri . '. 2 <br>';
+
         $userUri = explode('/', $userUri);
 
-        var_dump($userUri) . '. 3 <br>';
+        var_dump($userUri[0]) . '. 0 <br>';
+        var_dump($userUri[1]) . '. 0 <br>';
         die('mirstu ' . $_SERVER['REQUEST_URI']);
         die();
 

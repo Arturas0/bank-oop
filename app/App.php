@@ -20,17 +20,9 @@ class App
 
     public static function route()
     {
-
-
         $userUri = str_replace(INSTALL_DIR, '', $_SERVER['REQUEST_URI']);
-
         $userUri = preg_replace('/\?.*/', '', $userUri);
-
         $userUri = explode('/', $userUri);
-
-        var_dump($userUri[0]) . '. 0 <br>';
-        var_dump($userUri[1]) . '. 1 <br>';
-        die('mirstu 1 ' . $_SERVER['REQUEST_URI']);
 
 
         // if (

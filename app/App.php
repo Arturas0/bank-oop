@@ -60,7 +60,7 @@ class App
 
 
         //Tikriname ar prisijungęs vartotojas
-        if (!LoginController::isLogged()) {
+        if (LoginController::isLogged()) {
             self::redirect('login');
         }
 

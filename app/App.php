@@ -20,7 +20,7 @@ class App
 
     public static function route()
     {
-        $userUri = str_replace(INSTALL_DIR, '', $_SERVER['REQUEST_URI']);
+        $userUri = str_replace('/public/', '', $_SERVER['REQUEST_URI']);
         $userUri = preg_replace('/\?.*/', '', $userUri);
         $userUri = explode('/', $userUri);
 
@@ -61,7 +61,7 @@ class App
         // if (!LoginController::isLogged()) {
         //     self::redirect('login');
         // }
-        echo 'Hello x1';
+        echo INSTALL_DIR;
         print_r($_SERVER['REQUEST_URI']);
         if (
             $_SERVER['REQUEST_METHOD'] == 'GET' &&

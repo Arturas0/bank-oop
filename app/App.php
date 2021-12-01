@@ -13,9 +13,7 @@ class App
 
     public static function start()
     {
-        echo 'Labas 1';
         self::db();
-        echo 'Labas 2';
         return self::route();
     }
 
@@ -29,6 +27,7 @@ class App
         $userUri = explode('/', $userUri);
         echo $userUri . '. 3 <br>';
 
+        die();
 
         if (
             $_SERVER['REQUEST_METHOD'] == 'GET' &&
@@ -66,11 +65,6 @@ class App
         // if (!LoginController::isLogged()) {
         //     self::redirect('login');
         // }
-
-        echo 'Spausdiname kintamuosius';
-        echo ($userUri[0]);
-        echo ($userUri[1]);
-        die();
 
         if (
             $_SERVER['REQUEST_METHOD'] == 'GET' &&

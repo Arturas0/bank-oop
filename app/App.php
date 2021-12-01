@@ -26,6 +26,7 @@ class App
         $userUri = preg_replace('/\?.*/', '', $userUri);
         $userUri = explode('/', $userUri);
 
+        echo 'Labas 3';
 
         if (
             $_SERVER['REQUEST_METHOD'] == 'GET' &&
@@ -128,8 +129,6 @@ class App
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
             PDO::ATTR_EMULATE_PREPARES   => false,
         ];
-        echo 'Labas 2.5';
-        die();
         self::$pdo = new PDO($dsn, $user, $pass, $options);
     }
 

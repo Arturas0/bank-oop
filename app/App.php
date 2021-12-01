@@ -13,10 +13,8 @@ class App
 
     public static function start()
     {
-        // self::db();
-        // return self::route();
-
-        echo 'Hello';
+        self::db();
+        return self::route();
     }
 
 

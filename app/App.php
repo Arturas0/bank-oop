@@ -29,9 +29,9 @@ class App
         $userUri = explode('/', $userUri);
 
         var_dump($userUri[0]) . '. 0 <br>';
-        var_dump($userUri[1]) . '. 0 <br>';
-        die('mirstu ' . $_SERVER['REQUEST_URI']);
-        die();
+        var_dump($userUri[1]) . '. 1 <br>';
+        die('mirstu 1 ' . $_SERVER['REQUEST_URI']);
+
 
         // if (
         //     $_SERVER['REQUEST_METHOD'] == 'GET' &&
@@ -73,7 +73,10 @@ class App
         if (
             $_SERVER['REQUEST_METHOD'] == 'GET' &&
             $userUri[0] == 'sarasas' && count($userUri) == 1
+
         ) {
+            echo 'Hello xx';
+            die();
             return self::view('list', (new BankController)->showAll());
         } elseif (
             $_SERVER['REQUEST_METHOD'] == 'GET' &&

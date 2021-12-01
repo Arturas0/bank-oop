@@ -1,3 +1,10 @@
-<?php
+        <?php
 
-echo Hello;
+        use Bank\App;
+
+        require __DIR__ . '/../bootstrap.php';
+
+        App::start();
+
+        ?>
+   

@@ -63,6 +63,7 @@ class App
         // }
 
         print_r($_SERVER['REQUEST_URI']);
+        die();
         // if (
         //     $_SERVER['REQUEST_METHOD'] == 'GET' &&
         //     $userUri[0] == 'sarasas' && count($userUri) == 1

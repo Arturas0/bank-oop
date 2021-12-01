@@ -9,10 +9,6 @@ function getSetting(string $option)
     return $settings[$option] ?? null;
 }
 
-// define('URL',  'http://bank-oop.herokuapp.com');
-// define('DIR', __DIR__ . '/');
-// define('INSTALL_DIR', '/public/');
-
 define('URL', getSetting('url'));
 define('DIR', __DIR__ . '/');
 define('INSTALL_DIR', getSetting('dir'));

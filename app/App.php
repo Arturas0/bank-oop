@@ -26,8 +26,6 @@ class App
         $userUri = preg_replace('/\?.*/', '', $userUri);
         $userUri = explode('/', $userUri);
 
-        echo 'Labas 3';
-        die();
 
         if (
             $_SERVER['REQUEST_METHOD'] == 'GET' &&
@@ -120,9 +118,6 @@ class App
         $db   = getSetting('db');
         $user = getSetting('user');
         $pass = getSetting('pass');
-        $charset = 'utf8mb4';
-
-
 
         $dsn = "pgsql:host=$host;port=5432;dbname=$db;user=$user;password=$pass";
         $options = [

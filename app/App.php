@@ -59,10 +59,15 @@ class App
         }
 
 
-        //Tikriname ar prisijungęs vartotojas
-        if (LoginController::isLogged()) {
-            self::redirect('login');
-        }
+        // //Tikriname ar prisijungęs vartotojas
+        // if (!LoginController::isLogged()) {
+        //     self::redirect('login');
+        // }
+
+        echo 'Spausdiname kintamuosius';
+        echo ($userUri[0]);
+        echo ($userUri[1]);
+        die();
 
         if (
             $_SERVER['REQUEST_METHOD'] == 'GET' &&

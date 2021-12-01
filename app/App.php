@@ -32,43 +32,43 @@ class App
         die('mirstu ' . $_SERVER['REQUEST_URI']);
         die();
 
-        if (
-            $_SERVER['REQUEST_METHOD'] == 'GET' &&
-            $userUri[0] == 'login' && count($userUri) == 1
-        ) {
-            if (LoginController::isLogged()) {
-                self::redirect('sarasas');
-            }
-            return (new LoginController)->show();
-        } elseif (
-            $_SERVER['REQUEST_METHOD'] == 'POST' &&
-            $userUri[0] == 'login' && count($userUri) == 1
-        ) {
-            return (new LoginController)->doLogin();
-        } elseif (
-            $_SERVER['REQUEST_METHOD'] == 'GET' &&
-            $userUri[0] == 'register' && count($userUri) == 1
-        ) {
-            if (LoginController::isLogged()) {
-                self::redirect('register');
-            }
-            return (new LoginController)->register();
-        } elseif (
-            $_SERVER['REQUEST_METHOD'] == 'POST' &&
-            $userUri[0] == 'register' && count($userUri) == 1
-        ) {
-            if (LoginController::isLogged()) {
-                self::redirect('sarasas');
-            }
-            return (new LoginController)->doRegister();
-        }
+        // if (
+        //     $_SERVER['REQUEST_METHOD'] == 'GET' &&
+        //     $userUri[0] == 'login' && count($userUri) == 1
+        // ) {
+        //     if (LoginController::isLogged()) {
+        //         self::redirect('sarasas');
+        //     }
+        //     return (new LoginController)->show();
+        // } elseif (
+        //     $_SERVER['REQUEST_METHOD'] == 'POST' &&
+        //     $userUri[0] == 'login' && count($userUri) == 1
+        // ) {
+        //     return (new LoginController)->doLogin();
+        // } elseif (
+        //     $_SERVER['REQUEST_METHOD'] == 'GET' &&
+        //     $userUri[0] == 'register' && count($userUri) == 1
+        // ) {
+        //     if (LoginController::isLogged()) {
+        //         self::redirect('register');
+        //     }
+        //     return (new LoginController)->register();
+        // } elseif (
+        //     $_SERVER['REQUEST_METHOD'] == 'POST' &&
+        //     $userUri[0] == 'register' && count($userUri) == 1
+        // ) {
+        //     if (LoginController::isLogged()) {
+        //         self::redirect('sarasas');
+        //     }
+        //     return (new LoginController)->doRegister();
+        // }
 
 
         // //Tikriname ar prisijungęs vartotojas
         // if (!LoginController::isLogged()) {
         //     self::redirect('login');
         // }
-
+        var_dump(' Mirsu cia 2 ' . $_SERVER['REQUEST_URI']);
         if (
             $_SERVER['REQUEST_METHOD'] == 'GET' &&
             $userUri[0] == 'sarasas' && count($userUri) == 1

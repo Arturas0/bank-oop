@@ -61,13 +61,14 @@ class App
         // if (!LoginController::isLogged()) {
         //     self::redirect('login');
         // }
-        var_dump(' Mirsu cia 2 ' . $_SERVER['REQUEST_URI']);
+        echo 'Hello x1';
+        print_r($_SERVER['REQUEST_URI']);
         if (
             $_SERVER['REQUEST_METHOD'] == 'GET' &&
             $userUri[0] == 'sarasas' && count($userUri) == 1
 
         ) {
-            echo 'Hello xx';
+            echo 'Hello x2';
             die();
             return self::view('list', (new BankController)->showAll());
         } elseif (

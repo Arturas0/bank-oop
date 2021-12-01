@@ -23,8 +23,11 @@ class App
     public static function route()
     {
         $userUri = str_replace(INSTALL_DIR, '', $_SERVER['REQUEST_URI']);
+        echo $userUri . ' . 1 <br>';
         $userUri = preg_replace('/\?.*/', '', $userUri);
+        echo $userUri . '. 2 <br>';
         $userUri = explode('/', $userUri);
+        echo $userUri . '. 3 <br>';
 
 
         if (

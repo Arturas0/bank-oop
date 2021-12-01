@@ -120,15 +120,15 @@ class App
         $pass = getSetting('pass');
         $charset = 'utf8mb4';
 
-        echo 'Labas 2.5';
 
-        $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+
+        $dsn = "pgsql:host=$host;port=5432;dbname=$db;user=$user;password=$pass";
         $options = [
             PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
             PDO::ATTR_EMULATE_PREPARES   => false,
         ];
-
+        echo 'Labas 2.5';
         self::$pdo = new PDO($dsn, $user, $pass, $options);
     }
 

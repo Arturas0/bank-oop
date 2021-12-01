@@ -13,8 +13,9 @@ class App
 
     public static function start()
     {
+        echo 'Labas 1';
         self::db();
-        echo 'Labas';
+        echo 'Labas 2';
         return self::route();
     }
 

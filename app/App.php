@@ -25,7 +25,7 @@ class App
         $userUri = preg_replace('/\?.*/', '', $userUri);
         echo $userUri . '. 2 <br>';
         $userUri = explode('/', $userUri);
-        echo $userUri . '. 3 <br>';
+        var_dump($userUri) . '. 3 <br>';
 
         die();
 

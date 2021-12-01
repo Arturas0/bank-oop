@@ -20,7 +20,7 @@ class App
 
     public static function route()
     {
-        $userUri = str_replace('/public', '', $_SERVER['REQUEST_URI']);
+        $userUri = str_replace('/public/', '', $_SERVER['REQUEST_URI']);
         $userUri = preg_replace('/\?.*/', '', $userUri);
         $userUri = explode('/', $userUri);
 
@@ -63,54 +63,54 @@ class App
         // }
 
         print_r($_SERVER['REQUEST_URI']);
-        if (
-            $_SERVER['REQUEST_METHOD'] == 'GET' &&
-            $userUri[0] == 'sarasas' && count($userUri) == 1
+        // if (
+        //     $_SERVER['REQUEST_METHOD'] == 'GET' &&
+        //     $userUri[0] == 'sarasas' && count($userUri) == 1
 
-        ) {
-            echo 'Hello x2';
-            die();
-            return self::view('list', (new BankController)->showAll());
-        } elseif (
-            $_SERVER['REQUEST_METHOD'] == 'GET' &&
-            $userUri[0] == 'create' && count($userUri) == 1
-        ) {
-            return (new BankController)->create($userData = []);
-        } elseif (
-            $_SERVER['REQUEST_METHOD'] == 'POST' &&
-            $userUri[0] == 'create' && count($userUri) == 1
-        ) {
-            $userData = ['name' => $_POST['name'], 'surname' => $_POST['surname'], 'identification_number' => $_POST['identification_number'], 'account_number' => $_POST['account_number']];
-            $_SESSION['fname'] = $_POST['name'];
-            $_SESSION['fsurname'] = $_POST['surname'];
-            $_SESSION['fnumber'] = $_POST['account_number'];
-            $_SESSION['fidentification_number'] = $_POST['identification_number'];
-            return (new BankController)->create($userData);
-        } elseif (
-            $_SERVER['REQUEST_METHOD'] == 'GET' &&
-            $userUri[0] == 'update' && count($userUri) == 1 && (isset($_GET['add_to']) || (isset($_GET['deduct_from'])))
-        ) {
-            $userId = isset($_GET['add_to']) ? $_GET['add_to'] : (isset($_GET['deduct_from']) ? $_GET['deduct_from'] : '');
-            return self::view('account_operations', (new BankController)->show($userId));
-        } elseif (
-            $_SERVER['REQUEST_METHOD'] == 'POST' &&
-            $userUri[0] == 'update' && count($userUri) == 2
-        ) {
-            $userData = ['add_balance' => $_POST['add_balance'], 'acc_action' => $_POST['acc_action']];
-            return (new BankController)->update($userUri[1], $userData);
-        } elseif (
-            $_SERVER['REQUEST_METHOD'] == 'POST' &&
-            $userUri[0] == 'delete' && count($userUri) == 2
-        ) {
-            return (new BankController)->delete($userUri[1]);
-        } elseif (
-            $_SERVER['REQUEST_METHOD'] == 'POST' &&
-            $userUri[0] == 'logout' && count($userUri) == 1
-        ) {
-            return (new LoginController)->doLogout();
-        }
+        // ) {
+        //     echo 'Hello x2';
+        //     die();
+        //     return self::view('list', (new BankController)->showAll());
+        // } elseif (
+        //     $_SERVER['REQUEST_METHOD'] == 'GET' &&
+        //     $userUri[0] == 'create' && count($userUri) == 1
+        // ) {
+        //     return (new BankController)->create($userData = []);
+        // } elseif (
+        //     $_SERVER['REQUEST_METHOD'] == 'POST' &&
+        //     $userUri[0] == 'create' && count($userUri) == 1
+        // ) {
+        //     $userData = ['name' => $_POST['name'], 'surname' => $_POST['surname'], 'identification_number' => $_POST['identification_number'], 'account_number' => $_POST['account_number']];
+        //     $_SESSION['fname'] = $_POST['name'];
+        //     $_SESSION['fsurname'] = $_POST['surname'];
+        //     $_SESSION['fnumber'] = $_POST['account_number'];
+        //     $_SESSION['fidentification_number'] = $_POST['identification_number'];
+        //     return (new BankController)->create($userData);
+        // } elseif (
+        //     $_SERVER['REQUEST_METHOD'] == 'GET' &&
+        //     $userUri[0] == 'update' && count($userUri) == 1 && (isset($_GET['add_to']) || (isset($_GET['deduct_from'])))
+        // ) {
+        //     $userId = isset($_GET['add_to']) ? $_GET['add_to'] : (isset($_GET['deduct_from']) ? $_GET['deduct_from'] : '');
+        //     return self::view('account_operations', (new BankController)->show($userId));
+        // } elseif (
+        //     $_SERVER['REQUEST_METHOD'] == 'POST' &&
+        //     $userUri[0] == 'update' && count($userUri) == 2
+        // ) {
+        //     $userData = ['add_balance' => $_POST['add_balance'], 'acc_action' => $_POST['acc_action']];
+        //     return (new BankController)->update($userUri[1], $userData);
+        // } elseif (
+        //     $_SERVER['REQUEST_METHOD'] == 'POST' &&
+        //     $userUri[0] == 'delete' && count($userUri) == 2
+        // ) {
+        //     return (new BankController)->delete($userUri[1]);
+        // } elseif (
+        //     $_SERVER['REQUEST_METHOD'] == 'POST' &&
+        //     $userUri[0] == 'logout' && count($userUri) == 1
+        // ) {
+        //     return (new LoginController)->doLogout();
+        // }
 
-        echo '<h2>404 page not found </h2>';
+        // echo '<h2>404 page not found </h2>';
     }
 
 

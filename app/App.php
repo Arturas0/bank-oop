@@ -20,7 +20,7 @@ class App
 
     public static function route()
     {
-        die('mirstu ' . $_SERVER['REQUEST_URI']);
+
 
         $userUri = str_replace(INSTALL_DIR, '', $_SERVER['REQUEST_URI']);
         echo $userUri . ' . 1 <br>';
@@ -29,7 +29,7 @@ class App
         $userUri = explode('/', $userUri);
 
         var_dump($userUri) . '. 3 <br>';
-
+        die('mirstu ' . $_SERVER['REQUEST_URI']);
         die();
 
         if (

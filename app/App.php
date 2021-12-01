@@ -24,6 +24,8 @@ class App
         $userUri = preg_replace('/\?.*/', '', $userUri);
         $userUri = explode('/', $userUri);
 
+        var_dump($_SERVER);
+        die();
 
         if (
             $_SERVER['REQUEST_METHOD'] == 'GET' &&
